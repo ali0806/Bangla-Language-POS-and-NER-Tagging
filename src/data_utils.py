@@ -101,17 +101,6 @@ class CustomDataset(Dataset):
     """
     
     def __init__(self, data, word_vectors, pos_tag_to_idx, ner_tag_to_idx, max_length):
-        """
-        Initialize the CustomDataset with the provided data, word vectors, tag mappings, 
-        and maximum sequence length.
-
-        Args:
-            data (list): A list of tokenized sentences with POS and NER tags.
-            word_vectors (dict): A dictionary mapping words to their corresponding vectors.
-            pos_tag_to_idx (dict): Mapping of POS tags to indices.
-            ner_tag_to_idx (dict): Mapping of NER tags to indices.
-            max_length (int): The maximum length of the sequences.
-        """
         self.data = data
         self.word_vectors = word_vectors
         self.pos_tag_to_idx = pos_tag_to_idx
@@ -120,12 +109,6 @@ class CustomDataset(Dataset):
         self.max_length = max_length
 
     def __len__(self):
-        """
-        Return the total number of samples in the dataset.
-
-        Returns:
-            int: The number of samples in the dataset.
-        """
         return len(self.data)
 
     def __getitem__(self, idx):

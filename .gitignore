@@ -23,6 +23,7 @@ wheels/
 *.egg-info/
 .installed.cfg
 *.egg
+MANIFEST
 
 # PyInstaller
 *.manifest
@@ -32,91 +33,115 @@ wheels/
 pip-log.txt
 pip-delete-this-directory.txt
 
-# Pytest
-.cache/
-
 # Unit test / coverage reports
-.coverage
+htmlcov/
 .tox/
 .nox/
+.coverage
+.coverage.*
+.cache
 nosetests.xml
 coverage.xml
 *.cover
+*.py,cover
 .hypothesis/
 .pytest_cache/
+cover/
 
-# Environments
-.env
-.venv
-env/
-venv/
-ENV/
-env.bak/
-venv.bak/
-
-
-# Notebook metadata and extensions
-.custom_ipython/
-*.nbconvert_config
-*_output/
-
-# VS Code
-.vscode/
-*.code-workspace
-
-# PyCharm
-.idea/
-*.iml
-*.iws
-*.ipr
-.idea/**/workspace.xml
-.idea/**/tasks.xml
-.idea/dictionaries
-
-# Logs and databases
-*.log
-*.sqlite
-*.sqlite3
-*.db
-
-# Images
-*.png
-*.jpg
-*.jpeg
-*.gif
-*.svg
+# Translations
+*.mo
+*.pot
 
 # Django stuff:
-*.migrations/
+*.log
+local_settings.py
+db.sqlite3
+db.sqlite3-journal
 
 # Flask stuff:
 instance/
 .webassets-cache
 
 # Scrapy stuff:
-.scrapy/
+.scrapy
+
+# Sphinx documentation
+docs/_build/
+
+# PyBuilder
+target/
+
+
+
+# IPython
+profile_default/
+ipython_config.py
+
+# pyenv
+.venv/
+env/
+ENV/
+env.bak/
+venv.bak/
+
+# Spyder project settings
+.spyderproject
+.spyproject
+
+# Rope project settings
+.ropeproject
+
+# mkdocs documentation
+/site
+
+# mypy
+.mypy_cache/
+.dmypy.json
+dmypy.json
 
 # Pyre type checker
 .pyre/
 
-# Models (keep the directory but ignore the contents)
-model/*
-!model/.gitkeep
+# Coverage directory used by coverage.py
+.coverage
 
-# Media (include everything in media folder)
-!media/
-media/**
+# Bandit security scanner
+.bandit/
 
-# Sensitive or large files
-*.key
-*.pem
-*.crt
-.DS_Store
+# Celery stuff
+celerybeat-schedule
+celerybeat.pid
 
-# Temporary files and directories
+# Data files
+data/raw/
+data/processed/
+
+
+# Logs and temporary files
+*.log
 *.tmp
 *.swp
 *.swo
-*~
-.tmp/
+
+# VS Code settings
+.vscode/
+
+# Editor settings
+.idea/
+*.sublime-project
+*.sublime-workspace
+*.vscode/
+
+# Node.js dependencies
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# Ensure Dockerfile is not ignored
+# (uncomment this if it was ignored before)
+!Dockerfile
+
+# OS generated files
+.DS_Store
+Thumbs.db
 

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>POS and NER Tag Prediction</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>POS and NER Tag Prediction</h1>
+        <form method="POST">
+            <label for="input_text">Enter Text:</label>
+            <textarea id="input_text" name="input_text" rows="4" cols="50" placeholder="Type your text here..."></textarea>
+            <input type="submit" value="Predict">
+        </form>
+
+        {% if input_tokens %}
+            <div class="results">
+                <h2>Results</h2>
+                <div class="result-block">
+                    <p><strong>Input:</strong></p>
+                    <p class="tokens">{{ input_tokens }}</p>
+                </div>
+                <div class="result-block">
+                    <p><strong>Predicted POS Tags:</strong></p>
+                    <p class="pos-tags">{{ pos_tags }}</p>
+                </div>
+                <div class="result-block">
+                    <p><strong>Predicted NER Tags:</strong></p>
+                    <p class="ner-tags">{{ ner_tags }}</p>
+                </div>
+            </div>
+        {% endif %}
+    </div>
+</body>
+</html>

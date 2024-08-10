@@ -1,0 +1,25 @@
+version: '3.8'
+
+services:
+  fastapi:
+    image: python:3.9-slim
+    container_name: fastapi_service
+    working_dir: /app/api
+    volumes:
+      - ./model_api:/app/api
+      - ./model:/app/model
+    command: bash -c "pip install --no-cache-dir fastapi uvicorn onnxruntime numpy nltk && uvicorn inference_api:app --host 0.0.0.0 --port 8000"
+    ports:
+      - "8000:8000"
+
+  flask:
+    image: python:3.9-slim
+    container_name: flask_service
+    working_dir: /app
+    volumes:
+      - ./app:/app
+    command: bash -c "pip install --no-cache-dir flask requests && python app.py"
+    ports:
+      - "5000:5000"
+    depends_on:
+      - fastapi
